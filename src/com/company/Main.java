@@ -17,6 +17,11 @@ public class Main {
         int number = 27;
         char letter = numberToLetter( number);
         System.out.printf("Tallet %d bliver til bogstavet %c\n", number, letter);
+
+        int [] cipher ={1,2,5};
+        String plaintext = listOfNumbersToText(cipher);
+        System.out.println("Den krypterede tekst er: ");
+        System.out.println(plaintext);
     }
 
     public static int[] textToListOfNumbers(String text){
@@ -33,13 +38,22 @@ public class Main {
     public static int letterToNumber(char letter) {
 
         String alfabet = " ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ";
-        int num = alfabet.indexOf( letter );
-        return num;
+        return alfabet.indexOf( letter );
 
     }
+
+    public static String listOfNumbersToText (int[] numbers) {
+        StringBuilder text = new StringBuilder();
+        for (int number : numbers) {
+            char letter = numberToLetter(number);
+
+            text.append(letter);
+        }
+        return text.toString();
+    }
+
     public static char numberToLetter ( int number){
         String alfabet = " ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ";
-        char letter = alfabet.charAt(number);
-        return letter;
+        return alfabet.charAt(number);
     }
 }
