@@ -9,10 +9,14 @@ public class Main {
     int number = letterToNumber(letter);
         System.out.printf("Bogstavet %c bliver til %d", letter, number);*/
 
-        String plaintext = "ABE";
+/*        String plaintext = "ABE";
         int [] cipher = textToListOfNumbers(plaintext);
 
-        System.out.println(Arrays.toString(cipher));
+        System.out.println(Arrays.toString(cipher));*/
+
+        int number = 27;
+        char letter = numberToLetter( number);
+        System.out.printf("Tallet %d bliver til bogstavet %c\n", number, letter);
     }
 
     public static int[] textToListOfNumbers(String text){
@@ -32,5 +36,10 @@ public class Main {
         int num = alfabet.indexOf( letter );
         return num;
 
+    }
+    public static char numberToLetter ( int number){
+        String alfabet = " ABCDEFGHIJKLMNOPQRSTUVXYZÆØÅ";
+        char letter = alfabet.charAt(number);
+        return letter;
     }
 }
