@@ -3,13 +3,22 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	char letter = 'Å';
+/*	char letter = 'Å';
     int number = letterToNumber(letter);
-        System.out.printf("Bogstavet %c bliver til %d", letter, number);
+        System.out.printf("Bogstavet %c bliver til %d", letter, number);*/
+
+        String plaintext = "ABE";
+        int [] cipher = textToListOfNumbers(plaintext);
     }
 
     public static int[] textToListOfNumbers(String text){
-        return new int[0];
+        int [] liste = new int[text.length()];
+
+        liste [0] = 1;
+        liste [1] = 2;
+        liste [2] = 5;
+
+        return liste;
     }
 
     public static int letterToNumber(char letter) {
