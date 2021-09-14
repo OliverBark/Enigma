@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -9,16 +11,20 @@ public class Main {
 
         String plaintext = "ABE";
         int [] cipher = textToListOfNumbers(plaintext);
+
+        System.out.println(Arrays.toString(cipher));
     }
 
     public static int[] textToListOfNumbers(String text){
-        int [] liste = new int[text.length()];
+        int [] numbers = new int[text.length()];
 
-        liste [0] = 1;
-        liste [1] = 2;
-        liste [2] = 5;
+        char[] letters = text.toCharArray();
 
-        return liste;
+        for(int i = 0; i < text.length(); i++) {
+            numbers[i] = letterToNumber(letters[i]);
+        }
+
+        return numbers;
     }
 
     public static int letterToNumber(char letter) {
